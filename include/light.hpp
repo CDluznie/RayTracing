@@ -8,10 +8,23 @@ class Light {
 
 public:
 
+	/**
+	 * Construct a light
+     * \param position : Position of the light
+     * \param color : Color of the light
+     */
 	explicit Light(const glm::dvec3 &position, const glm::dvec4 &color);
 
+	/**
+     * Get the position of the light
+     * \return the position of the light
+     */
 	glm::dvec3 getPosition() const;
 
+	/**
+     * Get the color of the light
+     * \return the color of the light
+     */
 	glm::dvec4 getColor() const;
 
 

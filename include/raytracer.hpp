@@ -12,6 +12,13 @@ class Raytracer {
 
 public:
 
+	/**
+	 * Render a scene with a ray tracing algorithm
+	 * \param scene : Scene to render
+	 * \param camera : Camera used to film the scene
+	 * \param renderer : Renderer used to register the result
+	 * \param depth : Maximum number of ray reflections
+	 */
 	static void render(const Scene &scene, const Camera &camera, PNGRenderer &renderer, int depth);
 	
 private:

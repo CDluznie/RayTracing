@@ -12,4 +12,8 @@ compile :
 - make
 
 run :
+
 ./bin/raytracer	width height depth
+- width width of the image
+- height height of the image
+- depth maximum number of ray reflections
