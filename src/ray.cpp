@@ -15,6 +15,10 @@ Ray Ray::reflect(const glm::dvec3 &point, const glm::dvec3 &normal) const {
 	return Ray(point, _vector - scale*normal);
 }
 
+glm::dvec3 Ray::getPoint(double t) const {
+	return _origin + t*_vector;
+}
+
 glm::dvec3 Ray::getOrigin() const {
 	return glm::dvec3(_origin);
 }

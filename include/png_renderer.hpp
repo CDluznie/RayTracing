@@ -12,7 +12,7 @@ public:
 	/**
 	 * Create a PNG renderer
 	 * \param camera : Camera used to render the scene
-	 * \return The corresponding PNG renderer
+	 * \return the corresponding PNG renderer
 	 */
 	static PNGRenderer create(const Camera & camera);
 	

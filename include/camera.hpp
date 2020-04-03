@@ -16,7 +16,7 @@ public:
      * \param heightFov : Field of view angle in height
      * \param screenWidth : Width of the screen
      * \param screenHeight : Height of the screen
-     * \return The corresponding camera
+     * \return the corresponding camera
      */
 	static Camera create(const glm::dvec3 &position, const glm::dvec3 &target, const glm::dvec3 &up, double heightFov, int screenWidth, int screenHeight);
 
@@ -25,25 +25,25 @@ public:
 	 * \param px : Coordinate value on the \a x axis of the pixel
 	 * \param py : Coordinate value on the \a y axis of the pixel
 	 * \param dz : Distance on the \a z axis
-	 * \return The position of the pixel
+	 * \return the position of the pixel
 	 */
 	glm::dvec3 pixelPosition(int px, int py, double dz) const;
 
 	/**
 	 * Get the position of the camera
-	 * \return The position of the camera
+	 * \return the position of the camera
 	 */
 	glm::dvec3 getPosition() const;
 
 	/**
 	 * Get the width of the screen
-	 * \return The width of the screen
+	 * \return the width of the screen
 	 */
 	int getScreenWidth() const;
 
 	/**
 	 * Get the height of the screen
-	 * \return The height of the screen
+	 * \return the height of the screen
 	 */
 	int getScreenHeight() const;
 

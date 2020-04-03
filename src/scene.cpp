@@ -25,8 +25,7 @@ CollisionPoint * Scene::getIntersectedPoint(const Ray &ray) const {
 	if (closestShape == nullptr) {
 		return nullptr;
 	}
-	glm::dvec3 point = ray.getOrigin() + mint*ray.getVector();
-	return new CollisionPoint(point, closestShape);
+	return new CollisionPoint(ray.getPoint(mint), closestShape);
 }
 
 bool Scene::pointOccludedByLight(const glm::dvec3 &point, const Light &light) const {
