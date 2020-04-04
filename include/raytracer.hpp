@@ -1,3 +1,11 @@
+/**
+ * \file raytracer.hpp
+ * \brief Methods to compute the raytracing
+ *
+ * Module that provide the ray tracing function.
+ *
+ */
+
 #ifndef __RAYTRACER_H__
 #define __RAYTRACER_H__
 
@@ -8,6 +16,10 @@
 #include "png_renderer.hpp"
 #include <glm/glm.hpp>
 
+/** 
+ * \class Raytracer
+ * \brief Helper class to compute the result of the ray tracing
+ */
 class Raytracer {
 
 public:

@@ -1,9 +1,24 @@
+/**
+ * \file box.hpp
+ * \brief Representation of collision point
+ *
+ * Module for manipulation of collision points.
+ * The collision points are used to compute the intersection between a ray and a shape of the scene.
+ *
+ */
+ 
 #ifndef __COLLISION_POINT_H__
 #define __COLLISION_POINT_H__
 
 #include "shape.hpp"
 #include <glm/glm.hpp>
 
+/** 
+ * \class CollisionPoint
+ * \brief Class representing a collision point
+ * 
+ * A collision point is represented by a point in the space and the shape to which it belongs.
+ */
 class CollisionPoint {
 
 public:

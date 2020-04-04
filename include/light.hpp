@@ -1,9 +1,20 @@
+/**
+ * \file light.hpp
+ * \brief Representation of light
+ *
+ * Module for manipulation of lights.
+ *
+ */
+ 
 #ifndef __LIGHT_H__
 #define __LIGHT_H__
 
-
 #include <glm/glm.hpp>
 
+/** 
+ * \class Light
+ * \brief Class representing a light in the scene
+ */
 class Light {
 
 public:

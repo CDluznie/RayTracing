@@ -1,3 +1,11 @@
+/**
+ * \file shape.hpp
+ * \brief Representation of shape
+ *
+ * Module for manipulation of shapes.
+ *
+ */
+
 #ifndef __SHAPE_H__
 #define __SHAPE_H__
 
@@ -5,6 +13,10 @@
 #include <glm/glm.hpp>
 #include <vector>
 
+/** 
+ * \class SHape
+ * \brief Class representing a shape in the scene
+ */
 class Shape {
 
 public:
@@ -29,7 +41,7 @@ public:
      * This function will return all values \a t where the ray hit the shape.
      * If the ray did not hit the shape, the returned vector is empty.
      *
-     * \param ray: Tested ray
+     * \param ray : Tested ray
      * \return a vector containing all values \a t where the shape is intersected
      */
 	virtual std::vector<double> intersect(const Ray &ray) const = 0;
@@ -39,7 +51,7 @@ public:
      * 
      * The point have to be on the surface of the shape.
      *
-     * \param point: Point where we want to retrieve the normal
+     * \param point : Point where we want to retrieve the normal
      * \return the normal of the shape
      */
 	virtual glm::dvec3 normal(const glm::dvec3 &point) const = 0;

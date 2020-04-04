@@ -1,8 +1,20 @@
+/**
+ * \file ray.hpp
+ * \brief Representation of ray
+ *
+ * Module for manipulation of rays.
+ *
+ */
+
 #ifndef __RAY_H__
 #define __RAY_H__
 
 #include <glm/glm.hpp>
 
+/** 
+ * \class Ray
+ * \brief Class representing a ray
+ */
 class Ray {
 
 public:

@@ -1,9 +1,20 @@
+/**
+ * \file camera.hpp
+ * \brief Representation of camera
+ *
+ * Module for manipulation of cameras.
+ *
+ */
+
 #ifndef __CAMERA_H__
 #define __CAMERA_H__
 
-
 #include <glm/glm.hpp>
 
+/** 
+ * \class Camera
+ * \brief Class representing a camera
+ */
 class Camera {
 
 public:

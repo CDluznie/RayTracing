@@ -1,3 +1,11 @@
+/**
+ * \file sphere.hpp
+ * \brief Representation of sphere
+ *
+ * Module for manipulation of spheres.
+ *
+ */
+
 #ifndef __SPHERE_H__
 #define __SPHERE_H__
 
@@ -6,6 +14,10 @@
 #include <glm/glm.hpp>
 #include <vector>
 
+/** 
+ * \class Sphere
+ * \brief Class representing a sphere in the scene
+ */
 class Sphere : public Shape {
 
 public:

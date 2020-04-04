@@ -1,3 +1,11 @@
+/**
+ * \file box.hpp
+ * \brief Representation of box
+ *
+ * Module for manipulation of boxes.
+ *
+ */
+ 
 #ifndef __BOX_H__
 #define __BOX_H__
 
@@ -6,6 +14,10 @@
 #include <glm/glm.hpp>
 #include <vector>
 
+/** 
+ * \class Box
+ * \brief Class representing a box in the scene
+ */
 class Box : public Shape {
 
 public:
