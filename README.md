@@ -19,10 +19,10 @@ reflection (with example depth 0 1 2)
 ## Usage
 
 * Compilation :
-- `mkdir build`
-- `cd build`
-- `cmake ../`
-- `make`
+	- `mkdir build`
+	- `cd build`
+	- `cmake ../`
+	- `make`
 
 * Run : `./bin/raytracer width height depth`
 	- *width* : width of the image
