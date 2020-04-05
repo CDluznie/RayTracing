@@ -4,6 +4,7 @@
 #include "sphere.hpp"
 #include "light.hpp"
 #include "scene.hpp"
+#include "json_parser.hpp"
 #include "png_renderer.hpp"
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -37,100 +38,10 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	std::vector<Shape *> shapes = {
-		new Box(
-			glm::dvec3(-350.0, -350.0, -10.0),
-			glm::dvec3(350.0, 350.0, 10.0),
-			glm::dvec4(0.5, 0.5, 0.5, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0),
-				glm::dvec4(0.3, 0.3, 0.3, 1.0)
-		),
-		new Box(
-			glm::dvec3(-60.0, -60.0, 30.0),
-			glm::dvec3(60.0, 60.0, 150.0),
-			glm::dvec4(0.1, 0.4, 0.1, 1.0),
-			glm::dvec4(0.0, 0.0, 0.0, 1.0),
-			glm::dvec4(0.7, 0.7, 0.7, 1.0)
-		),
-		new Box(
-			glm::dvec3(-300.0, -330.0, 0.0),
-			glm::dvec3(330.0, -310.0, 200.0),
-			glm::dvec4(0.0, 1.0, 0.0, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0)
-		),
-		new Box(
-			glm::dvec3(-330.0, -300.0, 0.0),
-			glm::dvec3(-310.0, 300.0, 200.0),
-			glm::dvec4(1.0, 0.0, 0.0, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0)
-		),
-		new Box(
-			glm::dvec3(-300.0, 310.0, 0.0),
-			glm::dvec3(330.0, 330.0, 200.0),
-			glm::dvec4(0.0, 0.0, 1.0, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0),
-			glm::dvec4(0.1, 0.1, 0.1, 1.0)
-		),
-		new Sphere(
-			glm::dvec3(50.0, -130.0, 80.0),
-			40.0,
-			glm::dvec4(0.0, 0.4, 0.4, 1.0),
-			glm::dvec4(0.0, 0.0, 0.0, 1.0),
-			glm::dvec4(1.0, 0.6, 0.6, 1.0)
-		),
-		new Sphere(
-			glm::dvec3(-180.0, 180.0, 100.0),
-			75.0,
-			glm::dvec4(0.8, 0.8, 0.0, 1.0),
-			glm::dvec4(0.0, 0.0, 0.0, 1.0),
-			glm::dvec4(0.1, 0.1, 0.4, 1.0)
-		),
-		new Sphere(
-			glm::dvec3(150.0, 150.0, 45.0),
-			50.0,
-			glm::dvec4(0.8, 0.8, 0.8, 1.0),
-			glm::dvec4(0.0, 0.0, 0.0, 1.0),
-			glm::dvec4(0.0, 0.2, 0.0, 1.0)
-		),
-		new Sphere(
-			glm::dvec3(210.0, -25.0, 65.0),
-			55.0,
-			glm::dvec4(0.2, 0.2, 0.0, 1.0),
-			glm::dvec4(0.0, 0.0, 0.0, 1.0),
-			glm::dvec4(0.8, 0.8, 0.8, 1.0)
-		)
-	};
+	std::pair<Scene,Camera> parsingResult = JSONParser::parse("input.json", width, height);
 
-	std::vector<Light *> lights = {
-		new Light(
-			glm::dvec3(50.0, -500.0, 800.0),
-			glm::dvec4(0.8, 0.8, 0.8, 1.0)
-		),
-		new Light(
-			glm::dvec3(-350.0, 250.0, 600.0),
-			glm::dvec4(0.5, 0.7, 0.5, 1.0)
-		)
-	};
-
-	Scene scene = Scene(
-		shapes,
-		lights,
-		glm::dvec4(0.3, 0.3, 0.4, 1.0),
-		0.1,
-		10000.0
-	);
-
-	Camera camera = Camera::create(
-		glm::dvec3(700.0, 150.0, 400.0),
-		glm::dvec3(0.0, 50.0, 0.0),
-		glm::dvec3(0.0, 1.0, 0.0),
-		glm::pi<double>() / 5.0,
-		width,
-		height
-	);
-
+	Scene scene = std::get<0>(parsingResult);
+	Camera camera = std::get<1>(parsingResult);
 	PNGRenderer renderer = PNGRenderer::create(camera);
 
 	Raytracer::render(scene, camera, renderer, depth);
