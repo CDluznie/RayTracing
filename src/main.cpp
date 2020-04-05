@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	std::pair<Scene,Camera> parsingResult = JSONParser::parse("input.json", width, height);
+	std::pair<Scene,Camera> parsingResult = JSONParser::parse("../scenes/scene_1.json", width, height);
 
 	Scene scene = std::get<0>(parsingResult);
 	Camera camera = std::get<1>(parsingResult);

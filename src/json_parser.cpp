@@ -2,23 +2,18 @@
 #include "box.hpp"
 #include "sphere.hpp"
 #include "light.hpp"
+#include <fstream>
 
 using json = nlohmann::json;
 
 std::pair<Scene,Camera> JSONParser::parse(const std::string &fname, int width, int height) {
 	json jsonScene;
-	json jsonCamera;
-	
-	
-	jsonScene["backgroundColor"] = {0.3, 0.3, 0.4, 1.0};
-	
-	jsonCamera["position"] = {700.0, 150.0, 400.0};
-	jsonCamera["target"] = {0.0, 50.0, 0.0};
-	
-	
+	std::ifstream sceneFile(fname);
+	sceneFile >> jsonScene;
+	sceneFile.close();
 	return std::make_pair(
-		JSONToScene(jsonScene),
-		JSONToCamera(jsonCamera, width, height)
+		JSONToScene(jsonScene["scene"]),
+		JSONToCamera(jsonScene["camera"], width, height)
 	);
 }
 
