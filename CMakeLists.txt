@@ -6,9 +6,9 @@ set(EXECUTABLE_OUTPUT_PATH bin/)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -std=c++17")
 
-include_directories(
-        include/
-)
+include_directories(include/)
+
+#add_subdirectory(lib/)
 
 file(GLOB_RECURSE SOURCE_FILES src/*)
 file(GLOB HEADER_FILES *.hpp)
@@ -18,6 +18,8 @@ add_executable(
         ${SOURCE_FILES}
         ${HEADER_FILES}
 )
+
+target_include_directories(raytracer PRIVATE lib/)
 
 target_link_libraries(
         raytracer

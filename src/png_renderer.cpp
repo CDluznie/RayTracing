@@ -1,6 +1,6 @@
 #include "png_renderer.hpp"
 #include <lodepng.h>
-#include <iomanip>     
+#include <iomanip> 
 
 
 PNGRenderer::PNGRenderer(unsigned char *image, int width, int height) :
