@@ -34,7 +34,6 @@ public:
      */
 	explicit Scene(const std::vector<Shape *> &shapes, const std::vector<Light *> &lights, const glm::dvec4 &backgroundColor, double distanceNear, double distanceFar);
 
-	
 	/**
 	 * Copy constructor
 	 * \param scene : Scene to copy

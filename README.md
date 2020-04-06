@@ -76,9 +76,12 @@ You can check in `scenes/scene_1.json` for an example.
 	- `cmake ../`
 	- `make`
 
-* Run : `./bin/raytracer width height depth`
+* Run : `./bin/raytracer scene width height depth`
+	- *scene* : path to the scene file
 	- *width* : width of the image
 	- *height* : height of the image
 	- *depth* : maximum number of ray reflections
+
+For example `./bin/raytracer ../scenes/scene_1.json 768 512 4` will create a file `scene_1.png` of size 768x512 containing the result the of the rendering on the scene file `../scenes/scene_1.json` with a maximum ray reflections of 4.
 
 * Delete binary : `make clean`
