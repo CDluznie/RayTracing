@@ -54,13 +54,16 @@ public:
 	/**
 	 * Parse a JSON file scene
 	 *
-	 * TODO detail format
 	 * The description file contains the scene itself and the used camera to record the scene.
 	 * Then the function return a pair of the scene and the camera described in the file.
+	 * The camera is defined in the file by a position and a target.
+	 * The scene is defined in the file by a list of shapes, a list of lights and a background color.
+	 * For more precision on the format read the \a README.MD file
 	 *
 	 * \param fname : File to parse
 	 * \param width : Width of the image
 	 * \param height : Height of the image
+	 * \return the scene and the camera described in the file
 	 */
 	static std::pair<Scene,Camera> parse(const std::string &fname, int width, int height);
 	
