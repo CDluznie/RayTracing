@@ -11,6 +11,10 @@
 
 #include "scene.hpp"
 #include "camera.hpp"
+#include "shape.hpp"
+#include "sphere.hpp"
+#include "box.hpp"
+#include "light.hpp"
 #include <json/json.hpp>
 #include <string>
 #include <utility>
@@ -64,6 +68,10 @@ private:
 
 	static Scene JSONToScene(const json &jsonScene);
 	static Camera JSONToCamera(const json &jsonCamera, int width, int height);
+	static Shape * JSONToShape(const json &jsonShape);
+	static Box * JSONToBox(const json &jsonBox);
+	static Sphere * JSONToSphere(const json &jsonSphere);
+	static Light * JSONToLight(const json &jsonLight);
 	static glm::dvec3 JSONToVec3(const json &jsonVec3);
 	static glm::dvec4 JSONToVec4(const json &jsonVec4);
 

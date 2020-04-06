@@ -3,6 +3,9 @@
 #include "sphere.hpp"
 #include "light.hpp"
 #include <fstream>
+#include <string>
+#include <stdexcept>
+
 
 using json = nlohmann::json;
 
@@ -18,90 +21,59 @@ std::pair<Scene,Camera> JSONParser::parse(const std::string &fname, int width, i
 }
 
 Scene JSONParser::JSONToScene(const json &jsonScene) {
-	std::vector<Shape *> shapes = {
-				new Box(
-					glm::dvec3(-350.0, -350.0, -10.0),
-					glm::dvec3(350.0, 350.0, 10.0),
-					glm::dvec4(0.5, 0.5, 0.5, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0),
-						glm::dvec4(0.3, 0.3, 0.3, 1.0)
-				),
-				new Box(
-					glm::dvec3(-60.0, -60.0, 30.0),
-					glm::dvec3(60.0, 60.0, 150.0),
-					glm::dvec4(0.1, 0.4, 0.1, 1.0),
-					glm::dvec4(0.0, 0.0, 0.0, 1.0),
-					glm::dvec4(0.7, 0.7, 0.7, 1.0)
-				),
-				new Box(
-					glm::dvec3(-300.0, -330.0, 0.0),
-					glm::dvec3(330.0, -310.0, 200.0),
-					glm::dvec4(0.0, 1.0, 0.0, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0)
-				),
-				new Box(
-					glm::dvec3(-330.0, -300.0, 0.0),
-					glm::dvec3(-310.0, 300.0, 200.0),
-					glm::dvec4(1.0, 0.0, 0.0, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0)
-				),
-				new Box(
-					glm::dvec3(-300.0, 310.0, 0.0),
-					glm::dvec3(330.0, 330.0, 200.0),
-					glm::dvec4(0.0, 0.0, 1.0, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0),
-					glm::dvec4(0.1, 0.1, 0.1, 1.0)
-				),
-				new Sphere(
-					glm::dvec3(50.0, -130.0, 80.0),
-					40.0,
-					glm::dvec4(0.0, 0.4, 0.4, 1.0),
-					glm::dvec4(0.0, 0.0, 0.0, 1.0),
-					glm::dvec4(1.0, 0.6, 0.6, 1.0)
-				),
-				new Sphere(
-					glm::dvec3(-180.0, 180.0, 100.0),
-					75.0,
-					glm::dvec4(0.8, 0.8, 0.0, 1.0),
-					glm::dvec4(0.0, 0.0, 0.0, 1.0),
-					glm::dvec4(0.1, 0.1, 0.4, 1.0)
-				),
-				new Sphere(
-					glm::dvec3(150.0, 150.0, 45.0),
-					50.0,
-					glm::dvec4(0.8, 0.8, 0.8, 1.0),
-					glm::dvec4(0.0, 0.0, 0.0, 1.0),
-					glm::dvec4(0.0, 0.2, 0.0, 1.0)
-				),
-				new Sphere(
-					glm::dvec3(210.0, -25.0, 65.0),
-					55.0,
-					glm::dvec4(0.2, 0.2, 0.0, 1.0),
-					glm::dvec4(0.0, 0.0, 0.0, 1.0),
-					glm::dvec4(0.8, 0.8, 0.8, 1.0)
-				)
-			};
+	std::vector<Shape *> shapes;
+	for (auto &jsonShape : jsonScene["shapes"]) {
+		shapes.push_back(JSONToShape(jsonShape));
+	}
+	std::vector<Light *> lights;
+	for (auto &jsonLight : jsonScene["lights"]) {
+		lights.push_back(JSONToLight(jsonLight));
+	}
+	return Scene(
+		shapes,
+		lights,
+		JSONToVec4(jsonScene["backgroundColor"]),
+		SCENE_DEFAULT_DISTANCE_NEAR,
+		SCENE_DEFAULT_DISTANCE_FAR
+	);
+}
 
-			std::vector<Light *> lights = {
-				new Light(
-					glm::dvec3(50.0, -500.0, 800.0),
-					glm::dvec4(0.8, 0.8, 0.8, 1.0)
-				),
-				new Light(
-					glm::dvec3(-350.0, 250.0, 600.0),
-					glm::dvec4(0.5, 0.7, 0.5, 1.0)
-				)
-			};
+Shape * JSONParser::JSONToShape(const json &jsonShape) {
+	std::string shape = jsonShape["shape"];
+	if (shape == "sphere") {
+		return JSONToSphere(jsonShape);
+	}
+	if (shape == "box") {
+		return JSONToBox(jsonShape);
+	}
+	throw std::invalid_argument(shape + " is not a valid shape");
+}
 
-		return Scene(
-			shapes,
-			lights,
-			JSONToVec4(jsonScene["backgroundColor"]),
-			SCENE_DEFAULT_DISTANCE_NEAR,
-			SCENE_DEFAULT_DISTANCE_FAR
-		);
+Box * JSONParser::JSONToBox(const json &jsonBox) {
+	return new Box(
+		JSONToVec3(jsonBox["boxMin"]),
+		JSONToVec3(jsonBox["boxMax"]),
+		JSONToVec4(jsonBox["color"]),
+		JSONToVec4(jsonBox["emissive"]),
+		JSONToVec4(jsonBox["reflect"])
+	);
+}
+
+Sphere * JSONParser::JSONToSphere(const json &jsonSphere) {
+	return new Sphere(
+		JSONToVec3(jsonSphere["center"]),
+		jsonSphere["radius"],
+		JSONToVec4(jsonSphere["color"]),
+		JSONToVec4(jsonSphere["emissive"]),
+		JSONToVec4(jsonSphere["reflect"])
+	);
+}
+
+Light * JSONParser::JSONToLight(const json &jsonLight) {
+	new Light(
+		JSONToVec3(jsonLight["position"]),
+		JSONToVec4(jsonLight["color"])
+	);
 }
 
 Camera JSONParser::JSONToCamera(const json &jsonCamera, int width, int height) {
