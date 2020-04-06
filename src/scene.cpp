@@ -2,13 +2,41 @@
 #include <algorithm>
 
 
-Scene::Scene(std::vector<Shape *> shapes, std::vector<Light *> lights, const glm::dvec4 &backgroundColor, double distanceNear, double distanceFar) :
-_shapes(shapes),
-_lights(lights),
+Scene::Scene(const std::vector<Shape *> &shapes, const std::vector<Light *> &lights, const glm::dvec4 &backgroundColor, double distanceNear, double distanceFar) :
+_shapes(),
+_lights(),
 _backgroundColor(backgroundColor),
 _distanceNear(distanceNear),
 _distanceFar(distanceFar) {
+	for (const Shape *shape : shapes) {
+		_shapes.push_back(shape->copy());
+	}
+	for (const Light *light: lights) {
+		_lights.push_back(new Light(*light));
+	}
+}
 
+
+Scene::Scene(const Scene &scene) :
+Scene(
+	scene._shapes,
+	scene._lights,
+	scene._backgroundColor,
+	scene._distanceNear,
+	scene._distanceFar
+) {
+
+}
+
+Scene::~Scene() {
+	for (Shape *shape : _shapes) {
+		delete shape;
+	}
+	_shapes.clear();
+	for (Light *light: _lights) {
+		delete light;
+	}
+	_lights.clear();
 }
 
 CollisionPoint * Scene::getIntersectedPoint(const Ray &ray) const {

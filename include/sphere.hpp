@@ -33,6 +33,12 @@ public:
 	explicit Sphere(const glm::dvec3 &center, double radius, const glm::dvec4 &color, const glm::dvec4 &emissive, const glm::dvec4 &reflect);
 	
 	/**
+	 * Copy the sphere
+	 * \return a deep copy of the sphere
+	 */
+	Shape * copy() const;
+
+	/**
      * Get the parametric values on the ray where the sphere is intersected
      * 
      * A point on a ray can be written as <em>O + tD</em>, where \a O is the origin, \a D the direction and \a t a scalar.

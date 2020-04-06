@@ -29,13 +29,22 @@ Scene JSONParser::JSONToScene(const json &jsonScene) {
 	for (auto &jsonLight : jsonScene["lights"]) {
 		lights.push_back(JSONToLight(jsonLight));
 	}
-	return Scene(
+	Scene scene = Scene(
 		shapes,
 		lights,
 		JSONToVec4(jsonScene["backgroundColor"]),
 		SCENE_DEFAULT_DISTANCE_NEAR,
 		SCENE_DEFAULT_DISTANCE_FAR
 	);
+	for (Shape * shape : shapes) {
+		delete shape;
+	}
+	shapes.clear();
+	for (Light * light : lights) {
+		delete light;
+	}
+	lights.clear();
+	return scene;
 }
 
 Shape * JSONParser::JSONToShape(const json &jsonShape) {

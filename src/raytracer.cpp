@@ -19,6 +19,7 @@ glm::dvec4 Raytracer::throwRayWithoutReflection(const Scene &scene, const Camera
 	}
 	glm::dvec3 intersectedPoint = collisionPoint->getPoint();
 	const Shape *intersectedObject = collisionPoint->getShape();
+	delete collisionPoint;
 	glm::dvec4 lightingColor = scene.getLightingColor(intersectedPoint, intersectedObject->normal(intersectedPoint), intersectedObject->getColor());
 	return glm::clamp(lightingColor + intersectedObject->getEmissive(), 0.0, 1.0);
 }
@@ -31,6 +32,7 @@ glm::dvec4 Raytracer::throwRayWithOneReflection(const Scene &scene, const Camera
 	}
 	glm::dvec3 intersectedPoint = collisionPoint->getPoint();
 	const Shape *intersectedObject = collisionPoint->getShape();
+	delete collisionPoint;
 	glm::dvec3 intersectedObjectNormal = intersectedObject->normal(intersectedPoint);
 	Ray reflectRay = ray.reflect(intersectedPoint, intersectedObjectNormal);
 	glm::dvec4 reflectColor;
@@ -40,6 +42,7 @@ glm::dvec4 Raytracer::throwRayWithOneReflection(const Scene &scene, const Camera
 	} else {
 		reflectColor = reflectCollisionPoint->getShape()->getColor();
 	}
+	delete reflectCollisionPoint;
 	reflectColor = glm::clamp(intersectedObject->getReflect() * reflectColor, 0., 1.);
 	glm::dvec4 lightingColor = scene.getLightingColor(intersectedPoint, intersectedObjectNormal, intersectedObject->getColor());
 	lightingColor = glm::clamp(lightingColor + reflectColor, 0., 1.);
@@ -54,6 +57,7 @@ glm::dvec4 Raytracer::throwRay(const Scene &scene, const Camera &camera, int px,
 	}
 	glm::dvec3 intersectedPoint = collisionPoint->getPoint();
 	const Shape *intersectedObject = collisionPoint->getShape();
+	delete collisionPoint;
 	glm::dvec4 lightingColor = followRay(scene, ray, intersectedObject, intersectedPoint, depth);
 	return glm::clamp(intersectedObject->getEmissive() + lightingColor, 0.0, 1.0);
 }
@@ -71,6 +75,7 @@ glm::dvec4 Raytracer::followRay(const Scene &scene, const Ray &ray, const Shape 
 	} else {
 		reflectColor = followRay(scene, reflectRay, reflectCollisionPoint->getShape(), reflectCollisionPoint->getPoint(), depth-1);
 	}
+	delete reflectCollisionPoint;
 	reflectColor = glm::clamp(shape->getReflect() * reflectColor, 0., 1.);
 	glm::dvec4 lightingColor = scene.getLightingColor(point, normal, shape->getColor());
 	return glm::clamp(lightingColor + reflectColor, 0., 1.);

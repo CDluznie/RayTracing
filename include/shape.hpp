@@ -35,6 +35,12 @@ public:
 	virtual ~Shape() {};
 
 	/**
+	 * Copy the shape
+	 * \return a deep copy of the shape
+	 */
+	virtual Shape * copy() const = 0;
+
+	/**
      * Get the parametric values on the ray where the shape is intersected
      * 
      * A point on a ray can be written as <em>O + tD</em>, where \a O is the origin, \a D the direction and \a t a scalar.

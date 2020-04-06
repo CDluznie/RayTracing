@@ -33,6 +33,12 @@ public:
 	explicit Box(const glm::dvec3 &boxMin, const glm::dvec3 &boxMax, const glm::dvec4 &color, const glm::dvec4 &emissive, const glm::dvec4 &reflect);
 	
 	/**
+	 * Copy the box
+	 * \return a deep copy of the box
+	 */
+	Shape * copy() const;
+
+	/**
      * Get the parametric values on the ray where the box is intersected
      * 
      * A point on a ray can be written as <em>O + tD</em>, where \a O is the origin, \a D the direction and \a t a scalar.

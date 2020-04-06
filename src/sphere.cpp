@@ -8,6 +8,16 @@ _radius(radius) {
 
 }
 
+Shape * Sphere::copy() const {
+	return new Sphere(
+		_center,
+		_radius,
+		getColor(),
+		getEmissive(),
+		getReflect()
+	);
+}
+
 glm::dvec3 Sphere::normal(const glm::dvec3 &point) const {
 	return (_center - point)/_radius;
 }

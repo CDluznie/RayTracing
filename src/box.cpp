@@ -10,6 +10,16 @@ _boxMax(boxMax) {
 
 }
 
+Shape * Box::copy() const {
+	return new Box(
+		_boxMin,
+		_boxMax,
+		getColor(),
+		getEmissive(),
+		getReflect()
+	);
+}
+
 glm::dvec3 Box::normal(const glm::dvec3 &point) const {
 	glm::dvec3 centerBox(
 		(_boxMin.x + _boxMax.x)/2,

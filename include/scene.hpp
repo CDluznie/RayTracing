@@ -32,8 +32,20 @@ public:
      * \param distanceNear : Minimum rendering distance
      * \param distanceFar : Maximum rendering distance
      */
-	explicit Scene(std::vector<Shape *> shapes, std::vector<Light *> lights, const glm::dvec4 &backgroundColor, double distanceNear, double distanceFar);
+	explicit Scene(const std::vector<Shape *> &shapes, const std::vector<Light *> &lights, const glm::dvec4 &backgroundColor, double distanceNear, double distanceFar);
+
 	
+	/**
+	 * Copy constructor
+	 * \param scene : Scene to copy
+	 */
+	Scene(const Scene &scene);
+
+	/**
+	 * Destruct the scene
+	 */
+	~Scene();
+
 	/**
      * Get the collision point of the ray on the scene
      * 
