@@ -30,16 +30,26 @@ TODO json
 #### Scene description
 
 - `shapes` : list of the shapes in the scene
-	Where a shape can be either :
+
+- `shape`:
 	- `box`
-		* `minBox`
-		* `maxBox`
+		* `minBox` : minimum point of the box
+		* `maxBox` : maximum point of the box
+		* `color` : color of the box
+		* `emissive` : emissive color of the box
+		* `reflect` : reflection coefficients of the box
 	- `sphere`
-		* `center`
-		* `radius`
+		* `center` : center of the sphere
+		* `radius` : radius of the sphere
+		* `color` : color of the box
+		* `emissive` : emissive color of the box
+		* `reflect` : reflection coefficients of the box
 
 - `lights` : list of lights in the scene
-	Where a sphere is defined by a position in the space and a color
+
+- `light` : 
+	- `position` : position in the space of the light
+	- `color` : color of the light
 
 - `backgroundColor` : background color of the scene
 
