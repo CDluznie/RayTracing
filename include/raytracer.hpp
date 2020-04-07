@@ -33,9 +33,44 @@ public:
 	 */
 	static void render(const Scene &scene, const Camera &camera, PNGRenderer &renderer, int depth);
 	
+	/**
+	 * Render a scene with a ray tracing by displaying only the normals
+	 *
+	 * This function have been implemented for debugging purpose.
+	 *
+	 * \param scene : Scene to render
+	 * \param camera : Camera used to film the scene
+	 * \param renderer : Renderer used to register the result
+	 */
+	static void renderNormals(const Scene &scene, const Camera &camera, PNGRenderer &renderer);
+
+
+	/**
+	 * Render a scene with a ray tracing algorithm without any reflection
+	 *
+	 * This function have been implemented for debugging purpose.
+	 *
+	 * \param scene : Scene to render
+	 * \param camera : Camera used to film the scene
+	 * \param renderer : Renderer used to register the result
+	 */
+	static void renderWithoutReflection(const Scene &scene, const Camera &camera, PNGRenderer &renderer);
+
+	/**
+	 * Render a scene with a ray tracing algorithm with at most only one reflection
+	 *
+	 * This function have been implemented for debugging purpose.
+	 *
+	 * \param scene : Scene to render
+	 * \param camera : Camera used to film the scene
+	 * \param renderer : Renderer used to register the result
+	 */
+	static void renderWithOneReflection(const Scene &scene, const Camera &camera, PNGRenderer &renderer);
+
+
 private:
 
-	static void rayTracing(const Scene &scene, const Camera &camera, PNGRenderer &renderer, int depth);
+	static glm::dvec4 throwRayForNormals(const Scene &scene, const Camera &camera, int px, int py);
 	static glm::dvec4 throwRayWithoutReflection(const Scene &scene, const Camera &camera, int px, int py);
 	static glm::dvec4 throwRayWithOneReflection(const Scene &scene, const Camera &camera, int px, int py);
 	static glm::dvec4 throwRay(const Scene &scene, const Camera &camera, int px, int py, int depth);

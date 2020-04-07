@@ -11,6 +11,18 @@ Ray Raytracer::initialRay(const Camera &camera, int px, int py, double distanceN
 	);
 }
 
+glm::dvec4 Raytracer::throwRayForNormals(const Scene &scene, const Camera &camera, int px, int py) {
+	Ray ray = initialRay(camera, px, py, scene.getDistanceNear());
+	CollisionPoint *collisionPoint = scene.getIntersectedPoint(ray);
+	if (collisionPoint == nullptr) {
+		return scene.getBackgroundColor();
+	}
+	glm::dvec3 intersectedPoint = collisionPoint->getPoint();
+	const Shape *intersectedObject = collisionPoint->getShape();
+	delete collisionPoint;
+	return intersectedObject->normalColor(intersectedPoint);
+}
+
 glm::dvec4 Raytracer::throwRayWithoutReflection(const Scene &scene, const Camera &camera, int px, int py) {
 	Ray ray = initialRay(camera, px, py, scene.getDistanceNear());
 	CollisionPoint *collisionPoint = scene.getIntersectedPoint(ray);
@@ -81,15 +93,38 @@ glm::dvec4 Raytracer::followRay(const Scene &scene, const Ray &ray, const Shape 
 	return glm::clamp(lightingColor + reflectColor, 0., 1.);
 }
 
-void Raytracer::rayTracing(const Scene &scene, const Camera &camera, PNGRenderer &renderer, int depth) {
+void Raytracer::renderNormals(const Scene &scene, const Camera &camera, PNGRenderer &renderer) {
 	for(int j = 0; j < camera.getScreenHeight(); j++) {
 		for(int i = 0; i < camera.getScreenWidth(); i++) {
-			glm::dvec4 color = throwRay(scene, camera, i, j, depth);
+			glm::dvec4 color = throwRayForNormals(scene, camera, i, j);
+			renderer.setPixel(i, j, color);
+		}
+	}
+}
+
+void Raytracer::renderWithoutReflection(const Scene &scene, const Camera &camera, PNGRenderer &renderer) {
+	for(int j = 0; j < camera.getScreenHeight(); j++) {
+		for(int i = 0; i < camera.getScreenWidth(); i++) {
+			glm::dvec4 color = throwRayWithoutReflection(scene, camera, i, j);
+			renderer.setPixel(i, j, color);
+		}
+	}
+}
+
+void Raytracer::renderWithOneReflection(const Scene &scene, const Camera &camera, PNGRenderer &renderer) {
+	for(int j = 0; j < camera.getScreenHeight(); j++) {
+		for(int i = 0; i < camera.getScreenWidth(); i++) {
+			glm::dvec4 color = throwRayWithOneReflection(scene, camera, i, j);
 			renderer.setPixel(i, j, color);
 		}
 	}
 }
 
 void Raytracer::render(const Scene &scene, const Camera &camera, PNGRenderer &renderer, int depth) {
-	rayTracing(scene, camera, renderer, depth);
+	for(int j = 0; j < camera.getScreenHeight(); j++) {
+		for(int i = 0; i < camera.getScreenWidth(); i++) {
+			glm::dvec4 color = throwRay(scene, camera, i, j, depth);
+			renderer.setPixel(i, j, color);
+		}
+	}
 }
