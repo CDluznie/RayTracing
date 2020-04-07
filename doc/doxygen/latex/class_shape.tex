@@ -1,0 +1,173 @@
+\hypertarget{class_shape}{}\section{Shape Class Reference}
+\label{class_shape}\index{Shape@{Shape}}
+
+
+Inheritance diagram for Shape\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{class_shape__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_shape_ac88bb6ad20b88fd4d3424ef2f13f20ed}{Shape} (const glm\+::dvec4 \&color, const glm\+::dvec4 \&emissive, const glm\+::dvec4 \&reflect)
+\item 
+virtual \hyperlink{class_shape_ac3b9fc48965274893f25b18aa14ba665}{$\sim$\+Shape} ()
+\item 
+virtual \hyperlink{class_shape}{Shape} $\ast$ \hyperlink{class_shape_a99f9bc881b17366992a3edf278b105d0}{copy} () const =0
+\item 
+virtual std\+::vector$<$ double $>$ \hyperlink{class_shape_aa75a11aaba99bddfccf772faa7e6324b}{intersect} (const \hyperlink{class_ray}{Ray} \&ray) const =0
+\item 
+virtual glm\+::dvec3 \hyperlink{class_shape_a8444ffb396f26bd86c1c11bc6c47a74d}{normal} (const glm\+::dvec3 \&point) const =0
+\item 
+glm\+::dvec4 \hyperlink{class_shape_aa6568381e79d7ea3329829253601c64b}{get\+Color} () const 
+\item 
+glm\+::dvec4 \hyperlink{class_shape_a2e655e8d2e561f0373f3195fa18ec2dd}{get\+Emissive} () const 
+\item 
+glm\+::dvec4 \hyperlink{class_shape_a999c83a1d16cfa3743d4a117c54bfa00}{get\+Reflect} () const 
+\item 
+glm\+::dvec4 \hyperlink{class_shape_a51fed50eac9fbb4c39bd226e92643051}{normal\+Color} (const glm\+::dvec3 \&point) const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Shape@{Shape}!Shape@{Shape}}
+\index{Shape@{Shape}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{Shape(const glm\+::dvec4 \&color, const glm\+::dvec4 \&emissive, const glm\+::dvec4 \&reflect)}{Shape(const glm::dvec4 &color, const glm::dvec4 &emissive, const glm::dvec4 &reflect)}}]{\setlength{\rightskip}{0pt plus 5cm}Shape\+::\+Shape (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec4 \&}]{color, }
+\item[{const glm\+::dvec4 \&}]{emissive, }
+\item[{const glm\+::dvec4 \&}]{reflect}
+\end{DoxyParamCaption}
+)}\hypertarget{class_shape_ac88bb6ad20b88fd4d3424ef2f13f20ed}{}\label{class_shape_ac88bb6ad20b88fd4d3424ef2f13f20ed}
+Construct a shape 
+\begin{DoxyParams}{Parameters}
+{\em color} & \+: Color of the shape \\
+\hline
+{\em emissive} & \+: Emissive color of the shape \\
+\hline
+{\em reflect} & \+: Reflection coefficients of the shape \\
+\hline
+\end{DoxyParams}
+\index{Shape@{Shape}!````~Shape@{$\sim$\+Shape}}
+\index{````~Shape@{$\sim$\+Shape}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{$\sim$\+Shape()}{~Shape()}}]{\setlength{\rightskip}{0pt plus 5cm}virtual Shape\+::$\sim$\+Shape (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}\hypertarget{class_shape_ac3b9fc48965274893f25b18aa14ba665}{}\label{class_shape_ac3b9fc48965274893f25b18aa14ba665}
+Destruct the shape 
+
+\subsection{Member Function Documentation}
+\index{Shape@{Shape}!copy@{copy}}
+\index{copy@{copy}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{copy() const =0}{copy() const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Shape}$\ast$ Shape\+::copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_shape_a99f9bc881b17366992a3edf278b105d0}{}\label{class_shape_a99f9bc881b17366992a3edf278b105d0}
+Copy the shape \begin{DoxyReturn}{Returns}
+a deep copy of the shape 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_box_a4770c219ac36060feee72d02c45dab04}{Box}, and \hyperlink{class_sphere_a4510f5adf2bbee77129764097ef48d8a}{Sphere}.
+
+\index{Shape@{Shape}!get\+Color@{get\+Color}}
+\index{get\+Color@{get\+Color}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{get\+Color() const }{getColor() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec4 Shape\+::get\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_shape_aa6568381e79d7ea3329829253601c64b}{}\label{class_shape_aa6568381e79d7ea3329829253601c64b}
+Get the color of the shape \begin{DoxyReturn}{Returns}
+the color of the shape 
+\end{DoxyReturn}
+\index{Shape@{Shape}!get\+Emissive@{get\+Emissive}}
+\index{get\+Emissive@{get\+Emissive}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{get\+Emissive() const }{getEmissive() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec4 Shape\+::get\+Emissive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_shape_a2e655e8d2e561f0373f3195fa18ec2dd}{}\label{class_shape_a2e655e8d2e561f0373f3195fa18ec2dd}
+Get the emissive color of the shape \begin{DoxyReturn}{Returns}
+the emissive color of the shape 
+\end{DoxyReturn}
+\index{Shape@{Shape}!get\+Reflect@{get\+Reflect}}
+\index{get\+Reflect@{get\+Reflect}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{get\+Reflect() const }{getReflect() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec4 Shape\+::get\+Reflect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_shape_a999c83a1d16cfa3743d4a117c54bfa00}{}\label{class_shape_a999c83a1d16cfa3743d4a117c54bfa00}
+Get the reflection coefficients of the shape \begin{DoxyReturn}{Returns}
+the reflection coefficients of the shape 
+\end{DoxyReturn}
+\index{Shape@{Shape}!intersect@{intersect}}
+\index{intersect@{intersect}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{intersect(const Ray \&ray) const =0}{intersect(const Ray &ray) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::vector$<$double$>$ Shape\+::intersect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{ray}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_shape_aa75a11aaba99bddfccf772faa7e6324b}{}\label{class_shape_aa75a11aaba99bddfccf772faa7e6324b}
+Get the parametric values on the ray where the shape is intersected
+
+A point on a ray can be written as {\itshape O + tD}, where {\itshape O} is the origin, {\itshape D} the direction and {\itshape t} a scalar. This function will return all values {\itshape t} where the ray hit the shape. If the ray did not hit the shape, the returned vector is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & \+: Tested ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all values {\itshape t} where the shape is intersected 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_box_a32bbf5e25c16d002f2ff858177c25cd8}{Box}, and \hyperlink{class_sphere_afbd74bde6764fe9a037a86c2b38f1fce}{Sphere}.
+
+\index{Shape@{Shape}!normal@{normal}}
+\index{normal@{normal}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{normal(const glm\+::dvec3 \&point) const =0}{normal(const glm::dvec3 &point) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual glm\+::dvec3 Shape\+::normal (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{point}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_shape_a8444ffb396f26bd86c1c11bc6c47a74d}{}\label{class_shape_a8444ffb396f26bd86c1c11bc6c47a74d}
+Get the normal of the shape at a particular point
+
+The point have to be on the surface of the shape.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & \+: Point where we want to retrieve the normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the normal of the shape 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_box_a13821ada4849a78e238ced9260904a15}{Box}, and \hyperlink{class_sphere_a9ee72459ad76bddcc1dfb308991b33ee}{Sphere}.
+
+\index{Shape@{Shape}!normal\+Color@{normal\+Color}}
+\index{normal\+Color@{normal\+Color}!Shape@{Shape}}
+\subsubsection[{\texorpdfstring{normal\+Color(const glm\+::dvec3 \&point) const }{normalColor(const glm::dvec3 &point) const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec4 Shape\+::normal\+Color (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{point}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_shape_a51fed50eac9fbb4c39bd226e92643051}{}\label{class_shape_a51fed50eac9fbb4c39bd226e92643051}
+Get the normal as a color of the shape at a particular point
+
+This function is used for debugging purpose.
+
+\begin{DoxyReturn}{Returns}
+the normal of the shape as a color 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{shape_8hpp}{shape.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,4 @@
+<map id="Shape" name="Shape">
+<area shape="rect" id="node2" href="$class_box.html" title="Class representing a box in the scene. " alt="" coords="5,80,51,107"/>
+<area shape="rect" id="node3" href="$class_sphere.html" title="Class representing a sphere in the scene. " alt="" coords="75,80,138,107"/>
+</map>

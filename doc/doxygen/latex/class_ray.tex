@@ -1,0 +1,133 @@
+\hypertarget{class_ray}{}\section{Ray Class Reference}
+\label{class_ray}\index{Ray@{Ray}}
+
+
+Class representing a ray.  
+
+
+
+
+{\ttfamily \#include $<$ray.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_ray_a42822fab0639a6169cafd890d6f34890}{Ray} (const glm\+::dvec3 \&origin, const glm\+::dvec3 \&vector)
+\item 
+\hyperlink{class_ray}{Ray} \hyperlink{class_ray_aef1b0930f0f36b5b8c36bd76047e3355}{reflect} (const glm\+::dvec3 \&point, const glm\+::dvec3 \&normal) const 
+\item 
+glm\+::dvec3 \hyperlink{class_ray_a916ce6b9eb52405079f3584415d2ee9e}{get\+Point} (double t) const 
+\item 
+glm\+::dvec3 \hyperlink{class_ray_a7b6409bd508dfbf670e848903a1ae2da}{get\+Origin} () const 
+\item 
+glm\+::dvec3 \hyperlink{class_ray_a9421f6429d2180c2370b5aca97499b41}{get\+Vector} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_ray}{Ray} \hyperlink{class_ray_a1c375b1e77118ea82af5668fb0f4b630}{between\+Points} (const glm\+::dvec3 \&origin, const glm\+::dvec3 \&target)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a ray. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\subsubsection[{\texorpdfstring{Ray(const glm\+::dvec3 \&origin, const glm\+::dvec3 \&vector)}{Ray(const glm::dvec3 &origin, const glm::dvec3 &vector)}}]{\setlength{\rightskip}{0pt plus 5cm}Ray\+::\+Ray (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{origin, }
+\item[{const glm\+::dvec3 \&}]{vector}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_ray_a42822fab0639a6169cafd890d6f34890}{}\label{class_ray_a42822fab0639a6169cafd890d6f34890}
+Construct a ray 
+\begin{DoxyParams}{Parameters}
+{\em origin} & \+: Origin point of the ray \\
+\hline
+{\em vector} & \+: Direction of the ray \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Ray@{Ray}!between\+Points@{between\+Points}}
+\index{between\+Points@{between\+Points}!Ray@{Ray}}
+\subsubsection[{\texorpdfstring{between\+Points(const glm\+::dvec3 \&origin, const glm\+::dvec3 \&target)}{betweenPoints(const glm::dvec3 &origin, const glm::dvec3 &target)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Ray} Ray\+::between\+Points (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{origin, }
+\item[{const glm\+::dvec3 \&}]{target}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_ray_a1c375b1e77118ea82af5668fb0f4b630}{}\label{class_ray_a1c375b1e77118ea82af5668fb0f4b630}
+Compute the ray between two points 
+\begin{DoxyParams}{Parameters}
+{\em origin} & \+: Origin point of the ray \\
+\hline
+{\em target} & \+: Target point of the ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ray between the points {\itshape origin} and {\itshape target} 
+\end{DoxyReturn}
+\index{Ray@{Ray}!get\+Origin@{get\+Origin}}
+\index{get\+Origin@{get\+Origin}!Ray@{Ray}}
+\subsubsection[{\texorpdfstring{get\+Origin() const }{getOrigin() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Ray\+::get\+Origin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ray_a7b6409bd508dfbf670e848903a1ae2da}{}\label{class_ray_a7b6409bd508dfbf670e848903a1ae2da}
+Get the origin of the ray \begin{DoxyReturn}{Returns}
+the origin of the ray 
+\end{DoxyReturn}
+\index{Ray@{Ray}!get\+Point@{get\+Point}}
+\index{get\+Point@{get\+Point}!Ray@{Ray}}
+\subsubsection[{\texorpdfstring{get\+Point(double t) const }{getPoint(double t) const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Ray\+::get\+Point (
+\begin{DoxyParamCaption}
+\item[{double}]{t}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ray_a916ce6b9eb52405079f3584415d2ee9e}{}\label{class_ray_a916ce6b9eb52405079f3584415d2ee9e}
+Get the point on a the ray at a particular distance from the origin
+
+A point on a ray can be written as {\itshape O + tD}, where {\itshape O} is the origin, {\itshape D} the direction and {\itshape t} a scalar. This function will return the point when the value {\itshape t} is given.
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & Distance from the origin \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the point on the ray 
+\end{DoxyReturn}
+\index{Ray@{Ray}!get\+Vector@{get\+Vector}}
+\index{get\+Vector@{get\+Vector}!Ray@{Ray}}
+\subsubsection[{\texorpdfstring{get\+Vector() const }{getVector() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Ray\+::get\+Vector (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ray_a9421f6429d2180c2370b5aca97499b41}{}\label{class_ray_a9421f6429d2180c2370b5aca97499b41}
+Get the direction of the ray \begin{DoxyReturn}{Returns}
+the direction of the ray 
+\end{DoxyReturn}
+\index{Ray@{Ray}!reflect@{reflect}}
+\index{reflect@{reflect}!Ray@{Ray}}
+\subsubsection[{\texorpdfstring{reflect(const glm\+::dvec3 \&point, const glm\+::dvec3 \&normal) const }{reflect(const glm::dvec3 &point, const glm::dvec3 &normal) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Ray} Ray\+::reflect (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{point, }
+\item[{const glm\+::dvec3 \&}]{normal}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_ray_aef1b0930f0f36b5b8c36bd76047e3355}{}\label{class_ray_aef1b0930f0f36b5b8c36bd76047e3355}
+Compute the reflection ray at a particular point 
+\begin{DoxyParams}{Parameters}
+{\em point} & \+: Point where we want to reflect the ray \\
+\hline
+{\em normal} & \+: Value of the normal at {\itshape point} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the reflection ray 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{ray_8hpp}{ray.\+hpp}\end{DoxyCompactItemize}

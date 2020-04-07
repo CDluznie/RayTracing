@@ -1,0 +1,119 @@
+\hypertarget{class_camera}{}\section{Camera Class Reference}
+\label{class_camera}\index{Camera@{Camera}}
+
+
+Class representing a camera.  
+
+
+
+
+{\ttfamily \#include $<$camera.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::dvec3 \hyperlink{class_camera_a8fd5bf11217034ce0f64e298f87dad60}{pixel\+Position} (int px, int py, double dz) const 
+\item 
+glm\+::dvec3 \hyperlink{class_camera_ae6d3cad7a69868bcc9ba1fd6a0350254}{get\+Position} () const 
+\item 
+int \hyperlink{class_camera_a220935f09adabbfa85511c799dbfb2b9}{get\+Screen\+Width} () const 
+\item 
+int \hyperlink{class_camera_a0448708fe31e35eb3f6413b1378143d8}{get\+Screen\+Height} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_camera}{Camera} \hyperlink{class_camera_ad396e8d09bbd305d055857806048ffc7}{create} (const glm\+::dvec3 \&position, const glm\+::dvec3 \&target, const glm\+::dvec3 \&up, double height\+Fov, int screen\+Width, int screen\+Height)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a camera. 
+
+\subsection{Member Function Documentation}
+\index{Camera@{Camera}!create@{create}}
+\index{create@{create}!Camera@{Camera}}
+\subsubsection[{\texorpdfstring{create(const glm\+::dvec3 \&position, const glm\+::dvec3 \&target, const glm\+::dvec3 \&up, double height\+Fov, int screen\+Width, int screen\+Height)}{create(const glm::dvec3 &position, const glm::dvec3 &target, const glm::dvec3 &up, double heightFov, int screenWidth, int screenHeight)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf Camera} Camera\+::create (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{position, }
+\item[{const glm\+::dvec3 \&}]{target, }
+\item[{const glm\+::dvec3 \&}]{up, }
+\item[{double}]{height\+Fov, }
+\item[{int}]{screen\+Width, }
+\item[{int}]{screen\+Height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_camera_ad396e8d09bbd305d055857806048ffc7}{}\label{class_camera_ad396e8d09bbd305d055857806048ffc7}
+Create a camera 
+\begin{DoxyParams}{Parameters}
+{\em position} & \+: Position of the camera \\
+\hline
+{\em target} & \+: Targeted point of the camera \\
+\hline
+{\em up} & \+: Up vector \\
+\hline
+{\em height\+Fov} & \+: Field of view angle in height \\
+\hline
+{\em screen\+Width} & \+: Width of the screen \\
+\hline
+{\em screen\+Height} & \+: Height of the screen \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding camera 
+\end{DoxyReturn}
+\index{Camera@{Camera}!get\+Position@{get\+Position}}
+\index{get\+Position@{get\+Position}!Camera@{Camera}}
+\subsubsection[{\texorpdfstring{get\+Position() const }{getPosition() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Camera\+::get\+Position (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_camera_ae6d3cad7a69868bcc9ba1fd6a0350254}{}\label{class_camera_ae6d3cad7a69868bcc9ba1fd6a0350254}
+Get the position of the camera \begin{DoxyReturn}{Returns}
+the position of the camera 
+\end{DoxyReturn}
+\index{Camera@{Camera}!get\+Screen\+Height@{get\+Screen\+Height}}
+\index{get\+Screen\+Height@{get\+Screen\+Height}!Camera@{Camera}}
+\subsubsection[{\texorpdfstring{get\+Screen\+Height() const }{getScreenHeight() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Camera\+::get\+Screen\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_camera_a0448708fe31e35eb3f6413b1378143d8}{}\label{class_camera_a0448708fe31e35eb3f6413b1378143d8}
+Get the height of the screen \begin{DoxyReturn}{Returns}
+the height of the screen 
+\end{DoxyReturn}
+\index{Camera@{Camera}!get\+Screen\+Width@{get\+Screen\+Width}}
+\index{get\+Screen\+Width@{get\+Screen\+Width}!Camera@{Camera}}
+\subsubsection[{\texorpdfstring{get\+Screen\+Width() const }{getScreenWidth() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Camera\+::get\+Screen\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_camera_a220935f09adabbfa85511c799dbfb2b9}{}\label{class_camera_a220935f09adabbfa85511c799dbfb2b9}
+Get the width of the screen \begin{DoxyReturn}{Returns}
+the width of the screen 
+\end{DoxyReturn}
+\index{Camera@{Camera}!pixel\+Position@{pixel\+Position}}
+\index{pixel\+Position@{pixel\+Position}!Camera@{Camera}}
+\subsubsection[{\texorpdfstring{pixel\+Position(int px, int py, double dz) const }{pixelPosition(int px, int py, double dz) const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Camera\+::pixel\+Position (
+\begin{DoxyParamCaption}
+\item[{int}]{px, }
+\item[{int}]{py, }
+\item[{double}]{dz}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_camera_a8fd5bf11217034ce0f64e298f87dad60}{}\label{class_camera_a8fd5bf11217034ce0f64e298f87dad60}
+Get the position of a pixel in the space 
+\begin{DoxyParams}{Parameters}
+{\em px} & \+: Coordinate value on the {\itshape x} axis of the pixel \\
+\hline
+{\em py} & \+: Coordinate value on the {\itshape y} axis of the pixel \\
+\hline
+{\em dz} & \+: Distance on the {\itshape z} axis \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the position of the pixel 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{camera_8hpp}{camera.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,157 @@
+\hypertarget{class_scene}{}\section{Scene Class Reference}
+\label{class_scene}\index{Scene@{Scene}}
+
+
+Class representing a scene.  
+
+
+
+
+{\ttfamily \#include $<$scene.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scene_a6b52f72ea591204f451087b9792da171}{Scene} (const std\+::vector$<$ \hyperlink{class_shape}{Shape} $\ast$ $>$ \&shapes, const std\+::vector$<$ \hyperlink{class_light}{Light} $\ast$ $>$ \&lights, const glm\+::dvec4 \&background\+Color, double distance\+Near, double distance\+Far)
+\item 
+\hyperlink{class_scene_aae99632f6bac1360a8c7463c9ab0f613}{Scene} (const \hyperlink{class_scene}{Scene} \&scene)
+\item 
+\hyperlink{class_scene_a3b8cec2e32546713915f8c6303c951f1}{$\sim$\+Scene} ()
+\item 
+\hyperlink{class_collision_point}{Collision\+Point} $\ast$ \hyperlink{class_scene_aab56ec23d1fa987c7df17314c2a66e2e}{get\+Intersected\+Point} (const \hyperlink{class_ray}{Ray} \&ray) const 
+\item 
+glm\+::dvec4 \hyperlink{class_scene_a376dbe1ad119c38af20d56c21ab0c1ff}{get\+Lighting\+Color} (const glm\+::dvec3 \&point, const glm\+::dvec3 \&normal, const glm\+::dvec4 \&color) const 
+\item 
+glm\+::dvec4 \hyperlink{class_scene_ac4fd39d19429fce38bca6e3aeed1a9be}{get\+Background\+Color} () const 
+\item 
+double \hyperlink{class_scene_aec72df7b7e2e63665f8f60eed4472ddc}{get\+Distance\+Near} () const 
+\item 
+double \hyperlink{class_scene_a41e924d1668f1ab449c557eb36701ea5}{get\+Distance\+Far} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{Scene(const std\+::vector$<$ Shape $\ast$ $>$ \&shapes, const std\+::vector$<$ Light $\ast$ $>$ \&lights, const glm\+::dvec4 \&background\+Color, double distance\+Near, double distance\+Far)}{Scene(const std::vector< Shape * > &shapes, const std::vector< Light * > &lights, const glm::dvec4 &backgroundColor, double distanceNear, double distanceFar)}}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+::\+Scene (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ {\bf Shape} $\ast$ $>$ \&}]{shapes, }
+\item[{const std\+::vector$<$ {\bf Light} $\ast$ $>$ \&}]{lights, }
+\item[{const glm\+::dvec4 \&}]{background\+Color, }
+\item[{double}]{distance\+Near, }
+\item[{double}]{distance\+Far}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_scene_a6b52f72ea591204f451087b9792da171}{}\label{class_scene_a6b52f72ea591204f451087b9792da171}
+Construct a scene 
+\begin{DoxyParams}{Parameters}
+{\em shapes} & \+: Shapes of the scene \\
+\hline
+{\em lights} & \+: Lights of the scene \\
+\hline
+{\em background\+Color} & \+: Background color of the scene \\
+\hline
+{\em distance\+Near} & \+: Minimum rendering distance \\
+\hline
+{\em distance\+Far} & \+: Maximum rendering distance \\
+\hline
+\end{DoxyParams}
+\index{Scene@{Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{Scene(const Scene \&scene)}{Scene(const Scene &scene)}}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+::\+Scene (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene} \&}]{scene}
+\end{DoxyParamCaption}
+)}\hypertarget{class_scene_aae99632f6bac1360a8c7463c9ab0f613}{}\label{class_scene_aae99632f6bac1360a8c7463c9ab0f613}
+Copy constructor 
+\begin{DoxyParams}{Parameters}
+{\em scene} & \+: \hyperlink{class_scene}{Scene} to copy \\
+\hline
+\end{DoxyParams}
+\index{Scene@{Scene}!````~Scene@{$\sim$\+Scene}}
+\index{````~Scene@{$\sim$\+Scene}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{$\sim$\+Scene()}{~Scene()}}]{\setlength{\rightskip}{0pt plus 5cm}Scene\+::$\sim$\+Scene (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_scene_a3b8cec2e32546713915f8c6303c951f1}{}\label{class_scene_a3b8cec2e32546713915f8c6303c951f1}
+Destruct the scene 
+
+\subsection{Member Function Documentation}
+\index{Scene@{Scene}!get\+Background\+Color@{get\+Background\+Color}}
+\index{get\+Background\+Color@{get\+Background\+Color}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{get\+Background\+Color() const }{getBackgroundColor() const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec4 Scene\+::get\+Background\+Color (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_scene_ac4fd39d19429fce38bca6e3aeed1a9be}{}\label{class_scene_ac4fd39d19429fce38bca6e3aeed1a9be}
+Get the background color of the scene \begin{DoxyReturn}{Returns}
+the background color of the scene 
+\end{DoxyReturn}
+\index{Scene@{Scene}!get\+Distance\+Far@{get\+Distance\+Far}}
+\index{get\+Distance\+Far@{get\+Distance\+Far}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{get\+Distance\+Far() const }{getDistanceFar() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Scene\+::get\+Distance\+Far (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_scene_a41e924d1668f1ab449c557eb36701ea5}{}\label{class_scene_a41e924d1668f1ab449c557eb36701ea5}
+Get the maximum rendering distance of the scene \begin{DoxyReturn}{Returns}
+the maximum rendering distance of the scene 
+\end{DoxyReturn}
+\index{Scene@{Scene}!get\+Distance\+Near@{get\+Distance\+Near}}
+\index{get\+Distance\+Near@{get\+Distance\+Near}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{get\+Distance\+Near() const }{getDistanceNear() const }}]{\setlength{\rightskip}{0pt plus 5cm}double Scene\+::get\+Distance\+Near (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_scene_aec72df7b7e2e63665f8f60eed4472ddc}{}\label{class_scene_aec72df7b7e2e63665f8f60eed4472ddc}
+Get the minimum rendering distance of the scene \begin{DoxyReturn}{Returns}
+the minimum rendering distance of the scene 
+\end{DoxyReturn}
+\index{Scene@{Scene}!get\+Intersected\+Point@{get\+Intersected\+Point}}
+\index{get\+Intersected\+Point@{get\+Intersected\+Point}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{get\+Intersected\+Point(const Ray \&ray) const }{getIntersectedPoint(const Ray &ray) const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Collision\+Point}$\ast$ Scene\+::get\+Intersected\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{ray}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_scene_aab56ec23d1fa987c7df17314c2a66e2e}{}\label{class_scene_aab56ec23d1fa987c7df17314c2a66e2e}
+Get the collision point of the ray on the scene
+
+The function return the value {\itshape nullptr} if the ray did not intersect any object of the scene.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Tested ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer on a collision point if the ray intersect a shape of the scene, {\itshape nullptr} otherwise 
+\end{DoxyReturn}
+\index{Scene@{Scene}!get\+Lighting\+Color@{get\+Lighting\+Color}}
+\index{get\+Lighting\+Color@{get\+Lighting\+Color}!Scene@{Scene}}
+\subsubsection[{\texorpdfstring{get\+Lighting\+Color(const glm\+::dvec3 \&point, const glm\+::dvec3 \&normal, const glm\+::dvec4 \&color) const }{getLightingColor(const glm::dvec3 &point, const glm::dvec3 &normal, const glm::dvec4 &color) const }}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec4 Scene\+::get\+Lighting\+Color (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{point, }
+\item[{const glm\+::dvec3 \&}]{normal, }
+\item[{const glm\+::dvec4 \&}]{color}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_scene_a376dbe1ad119c38af20d56c21ab0c1ff}{}\label{class_scene_a376dbe1ad119c38af20d56c21ab0c1ff}
+Compute the rendering color of particular point on the scene 
+\begin{DoxyParams}{Parameters}
+{\em point} & \+: Point where we want to compute the color \\
+\hline
+{\em normal} & \+: Normal of the point \\
+\hline
+{\em color} & \+: Color of the point \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the resulting color 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{scene_8hpp}{scene.\+hpp}\end{DoxyCompactItemize}

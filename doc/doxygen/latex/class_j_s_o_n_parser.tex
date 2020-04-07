@@ -1,0 +1,78 @@
+\hypertarget{class_j_s_o_n_parser}{}\section{J\+S\+O\+N\+Parser Class Reference}
+\label{class_j_s_o_n_parser}\index{J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}}
+
+
+Helper class to parse the J\+S\+ON scene files.  
+
+
+
+
+{\ttfamily \#include $<$json\+\_\+parser.\+hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::pair$<$ \hyperlink{class_scene}{Scene}, \hyperlink{class_camera}{Camera} $>$ \hyperlink{class_j_s_o_n_parser_a0c127858348c36af0ac74a9653eaf6a0}{parse} (const std\+::string \&fname, int width, int height)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr double \hyperlink{class_j_s_o_n_parser_a22e4a2b46ab4556ab6be042932ac60dc}{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV} = glm\+::pi$<$double$>$() / 5.\+0
+\item 
+static constexpr glm\+::dvec3 \hyperlink{class_j_s_o_n_parser_a2deb13759a25487b8033aaf84ac7c561}{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR} = glm\+::dvec3(0.\+0, 1.\+0, 0.\+0)
+\item 
+static constexpr double \hyperlink{class_j_s_o_n_parser_a319445abcd1d1aebf5016488df6184ac}{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR} = 0.\+1
+\item 
+static constexpr double \hyperlink{class_j_s_o_n_parser_adcd06251c7b4b7ae8386d62dd4e72e07}{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR} = 10000.\+0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class to parse the J\+S\+ON scene files. 
+
+\subsection{Member Function Documentation}
+\index{J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}!parse@{parse}}
+\index{parse@{parse}!J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}}
+\subsubsection[{\texorpdfstring{parse(const std\+::string \&fname, int width, int height)}{parse(const std::string &fname, int width, int height)}}]{\setlength{\rightskip}{0pt plus 5cm}static std\+::pair$<${\bf Scene},{\bf Camera}$>$ J\+S\+O\+N\+Parser\+::parse (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{fname, }
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_j_s_o_n_parser_a0c127858348c36af0ac74a9653eaf6a0}{}\label{class_j_s_o_n_parser_a0c127858348c36af0ac74a9653eaf6a0}
+Parse a J\+S\+ON file scene
+
+The description file contains the scene itself and the used camera to record the scene. Then the function return a pair of the scene and the camera described in the file. The camera is defined in the file by a position and a target. The scene is defined in the file by a list of shapes, a list of lights and a background color. For more precision on the format read the {\itshape R\+E\+A\+D\+M\+E.\+MD} file
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & \+: File to parse \\
+\hline
+{\em width} & \+: Width of the image \\
+\hline
+{\em height} & \+: Height of the image \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the scene and the camera described in the file 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}!C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV@{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV@{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV}!J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV}{CAMERA_DEFAULT_HEIGHT_FOV}}]{\setlength{\rightskip}{0pt plus 5cm}constexpr double J\+S\+O\+N\+Parser\+::\+C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+H\+E\+I\+G\+H\+T\+\_\+\+F\+OV = glm\+::pi$<$double$>$() / 5.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_j_s_o_n_parser_a22e4a2b46ab4556ab6be042932ac60dc}{}\label{class_j_s_o_n_parser_a22e4a2b46ab4556ab6be042932ac60dc}
+Default value for the camera field of view angle in height \index{J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}!C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR@{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR}}
+\index{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR@{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR}!J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}}
+\subsubsection[{\texorpdfstring{C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR}{CAMERA_DEFAULT_UP_VECTOR}}]{\setlength{\rightskip}{0pt plus 5cm}constexpr glm\+::dvec3 J\+S\+O\+N\+Parser\+::\+C\+A\+M\+E\+R\+A\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+U\+P\+\_\+\+V\+E\+C\+T\+OR = glm\+::dvec3(0.\+0, 1.\+0, 0.\+0)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_j_s_o_n_parser_a2deb13759a25487b8033aaf84ac7c561}{}\label{class_j_s_o_n_parser_a2deb13759a25487b8033aaf84ac7c561}
+Default value for the camera up vector \index{J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}!S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR@{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR}}
+\index{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR@{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR}!J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}}
+\subsubsection[{\texorpdfstring{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR}{SCENE_DEFAULT_DISTANCE_FAR}}]{\setlength{\rightskip}{0pt plus 5cm}constexpr double J\+S\+O\+N\+Parser\+::\+S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+F\+AR = 10000.\+0\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_j_s_o_n_parser_adcd06251c7b4b7ae8386d62dd4e72e07}{}\label{class_j_s_o_n_parser_adcd06251c7b4b7ae8386d62dd4e72e07}
+Default value for the scene maximum rendering distance \index{J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}!S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR@{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR}}
+\index{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR@{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR}!J\+S\+O\+N\+Parser@{J\+S\+O\+N\+Parser}}
+\subsubsection[{\texorpdfstring{S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR}{SCENE_DEFAULT_DISTANCE_NEAR}}]{\setlength{\rightskip}{0pt plus 5cm}constexpr double J\+S\+O\+N\+Parser\+::\+S\+C\+E\+N\+E\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+D\+I\+S\+T\+A\+N\+C\+E\+\_\+\+N\+E\+AR = 0.\+1\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_j_s_o_n_parser_a319445abcd1d1aebf5016488df6184ac}{}\label{class_j_s_o_n_parser_a319445abcd1d1aebf5016488df6184ac}
+Default value for the scene minimum rendering distance 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{json__parser_8hpp}{json\+\_\+parser.\+hpp}\end{DoxyCompactItemize}

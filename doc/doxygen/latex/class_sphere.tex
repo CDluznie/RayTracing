@@ -1,0 +1,140 @@
+\hypertarget{class_sphere}{}\section{Sphere Class Reference}
+\label{class_sphere}\index{Sphere@{Sphere}}
+
+
+Class representing a sphere in the scene.  
+
+
+
+
+{\ttfamily \#include $<$sphere.\+hpp$>$}
+
+
+
+Inheritance diagram for Sphere\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_sphere__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sphere\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=127pt]{class_sphere__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sphere_a4e8ff9197b7acbecd4b1f40106ebd2cf}{Sphere} (const glm\+::dvec3 \&center, double radius, const glm\+::dvec4 \&color, const glm\+::dvec4 \&emissive, const glm\+::dvec4 \&reflect)
+\item 
+\hyperlink{class_shape}{Shape} $\ast$ \hyperlink{class_sphere_a4510f5adf2bbee77129764097ef48d8a}{copy} () const 
+\item 
+std\+::vector$<$ double $>$ \hyperlink{class_sphere_afbd74bde6764fe9a037a86c2b38f1fce}{intersect} (const \hyperlink{class_ray}{Ray} \&ray) const override
+\item 
+glm\+::dvec3 \hyperlink{class_sphere_a9ee72459ad76bddcc1dfb308991b33ee}{normal} (const glm\+::dvec3 \&point) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a sphere in the scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\index{Sphere@{Sphere}!Sphere@{Sphere}}
+\subsubsection[{\texorpdfstring{Sphere(const glm\+::dvec3 \&center, double radius, const glm\+::dvec4 \&color, const glm\+::dvec4 \&emissive, const glm\+::dvec4 \&reflect)}{Sphere(const glm::dvec3 &center, double radius, const glm::dvec4 &color, const glm::dvec4 &emissive, const glm::dvec4 &reflect)}}]{\setlength{\rightskip}{0pt plus 5cm}Sphere\+::\+Sphere (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{center, }
+\item[{double}]{radius, }
+\item[{const glm\+::dvec4 \&}]{color, }
+\item[{const glm\+::dvec4 \&}]{emissive, }
+\item[{const glm\+::dvec4 \&}]{reflect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_sphere_a4e8ff9197b7acbecd4b1f40106ebd2cf}{}\label{class_sphere_a4e8ff9197b7acbecd4b1f40106ebd2cf}
+Construct a sphere 
+\begin{DoxyParams}{Parameters}
+{\em center} & \+: Center of the sphere \\
+\hline
+{\em radius} & \+: Radius of the sphere \\
+\hline
+{\em color} & \+: Color of the sphere \\
+\hline
+{\em emissive} & \+: Emissive color of the sphere \\
+\hline
+{\em reflect} & \+: Reflection coefficients of the sphere \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Sphere@{Sphere}!copy@{copy}}
+\index{copy@{copy}!Sphere@{Sphere}}
+\subsubsection[{\texorpdfstring{copy() const }{copy() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape}$\ast$ Sphere\+::copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_sphere_a4510f5adf2bbee77129764097ef48d8a}{}\label{class_sphere_a4510f5adf2bbee77129764097ef48d8a}
+Copy the sphere \begin{DoxyReturn}{Returns}
+a deep copy of the sphere 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shape_a99f9bc881b17366992a3edf278b105d0}{Shape}.
+
+\index{Sphere@{Sphere}!intersect@{intersect}}
+\index{intersect@{intersect}!Sphere@{Sphere}}
+\subsubsection[{\texorpdfstring{intersect(const Ray \&ray) const override}{intersect(const Ray &ray) const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ Sphere\+::intersect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{ray}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_sphere_afbd74bde6764fe9a037a86c2b38f1fce}{}\label{class_sphere_afbd74bde6764fe9a037a86c2b38f1fce}
+Get the parametric values on the ray where the sphere is intersected
+
+A point on a ray can be written as {\itshape O + tD}, where {\itshape O} is the origin, {\itshape D} the direction and {\itshape t} a scalar. This function will return all values {\itshape t} where the ray hit the sphere. If the ray did not hit the sphere, the returned vector is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Tested ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all values {\itshape t} where the sphere is intersected 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shape_aa75a11aaba99bddfccf772faa7e6324b}{Shape}.
+
+\index{Sphere@{Sphere}!normal@{normal}}
+\index{normal@{normal}!Sphere@{Sphere}}
+\subsubsection[{\texorpdfstring{normal(const glm\+::dvec3 \&point) const override}{normal(const glm::dvec3 &point) const override}}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Sphere\+::normal (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{point}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_sphere_a9ee72459ad76bddcc1dfb308991b33ee}{}\label{class_sphere_a9ee72459ad76bddcc1dfb308991b33ee}
+Get the normal of the sphere at a particular point
+
+The point have to be on the surface of the sphere.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point where we want to retrieve the normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the normal of the sphere 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shape_a8444ffb396f26bd86c1c11bc6c47a74d}{Shape}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{sphere_8hpp}{sphere.\+hpp}\end{DoxyCompactItemize}

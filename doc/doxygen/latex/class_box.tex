@@ -1,0 +1,140 @@
+\hypertarget{class_box}{}\section{Box Class Reference}
+\label{class_box}\index{Box@{Box}}
+
+
+Class representing a box in the scene.  
+
+
+
+
+{\ttfamily \#include $<$box.\+hpp$>$}
+
+
+
+Inheritance diagram for Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{class_box__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Box\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=124pt]{class_box__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_box_abfd946b41f47834eaa541b722bac9a29}{Box} (const glm\+::dvec3 \&box\+Min, const glm\+::dvec3 \&box\+Max, const glm\+::dvec4 \&color, const glm\+::dvec4 \&emissive, const glm\+::dvec4 \&reflect)
+\item 
+\hyperlink{class_shape}{Shape} $\ast$ \hyperlink{class_box_a4770c219ac36060feee72d02c45dab04}{copy} () const 
+\item 
+std\+::vector$<$ double $>$ \hyperlink{class_box_a32bbf5e25c16d002f2ff858177c25cd8}{intersect} (const \hyperlink{class_ray}{Ray} \&ray) const override
+\item 
+glm\+::dvec3 \hyperlink{class_box_a13821ada4849a78e238ced9260904a15}{normal} (const glm\+::dvec3 \&point) const override
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class representing a box in the scene. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Box@{Box}!Box@{Box}}
+\index{Box@{Box}!Box@{Box}}
+\subsubsection[{\texorpdfstring{Box(const glm\+::dvec3 \&box\+Min, const glm\+::dvec3 \&box\+Max, const glm\+::dvec4 \&color, const glm\+::dvec4 \&emissive, const glm\+::dvec4 \&reflect)}{Box(const glm::dvec3 &boxMin, const glm::dvec3 &boxMax, const glm::dvec4 &color, const glm::dvec4 &emissive, const glm::dvec4 &reflect)}}]{\setlength{\rightskip}{0pt plus 5cm}Box\+::\+Box (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{box\+Min, }
+\item[{const glm\+::dvec3 \&}]{box\+Max, }
+\item[{const glm\+::dvec4 \&}]{color, }
+\item[{const glm\+::dvec4 \&}]{emissive, }
+\item[{const glm\+::dvec4 \&}]{reflect}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_box_abfd946b41f47834eaa541b722bac9a29}{}\label{class_box_abfd946b41f47834eaa541b722bac9a29}
+Construct a box 
+\begin{DoxyParams}{Parameters}
+{\em box\+Min} & \+: Minimum point of the box \\
+\hline
+{\em box\+Max} & \+: Maximum point of the box \\
+\hline
+{\em color} & \+: Color of the box \\
+\hline
+{\em emissive} & \+: Emissive color of the box \\
+\hline
+{\em reflect} & \+: Reflection coefficients of the box \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Box@{Box}!copy@{copy}}
+\index{copy@{copy}!Box@{Box}}
+\subsubsection[{\texorpdfstring{copy() const }{copy() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Shape}$\ast$ Box\+::copy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_box_a4770c219ac36060feee72d02c45dab04}{}\label{class_box_a4770c219ac36060feee72d02c45dab04}
+Copy the box \begin{DoxyReturn}{Returns}
+a deep copy of the box 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shape_a99f9bc881b17366992a3edf278b105d0}{Shape}.
+
+\index{Box@{Box}!intersect@{intersect}}
+\index{intersect@{intersect}!Box@{Box}}
+\subsubsection[{\texorpdfstring{intersect(const Ray \&ray) const override}{intersect(const Ray &ray) const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$double$>$ Box\+::intersect (
+\begin{DoxyParamCaption}
+\item[{const {\bf Ray} \&}]{ray}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_box_a32bbf5e25c16d002f2ff858177c25cd8}{}\label{class_box_a32bbf5e25c16d002f2ff858177c25cd8}
+Get the parametric values on the ray where the box is intersected
+
+A point on a ray can be written as {\itshape O + tD}, where {\itshape O} is the origin, {\itshape D} the direction and {\itshape t} a scalar. This function will return all values {\itshape t} where the ray hit the box. If the ray did not hit the box, the returned vector is empty.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & Tested ray \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a vector containing all values {\itshape t} where the box is intersected 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shape_aa75a11aaba99bddfccf772faa7e6324b}{Shape}.
+
+\index{Box@{Box}!normal@{normal}}
+\index{normal@{normal}!Box@{Box}}
+\subsubsection[{\texorpdfstring{normal(const glm\+::dvec3 \&point) const override}{normal(const glm::dvec3 &point) const override}}]{\setlength{\rightskip}{0pt plus 5cm}glm\+::dvec3 Box\+::normal (
+\begin{DoxyParamCaption}
+\item[{const glm\+::dvec3 \&}]{point}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_box_a13821ada4849a78e238ced9260904a15}{}\label{class_box_a13821ada4849a78e238ced9260904a15}
+Get the normal of the box at a particular point
+
+The point have to be on the surface of the box.
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & Point where we want to retrieve the normal \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the normal of the box 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_shape_a8444ffb396f26bd86c1c11bc6c47a74d}{Shape}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{box_8hpp}{box.\+hpp}\end{DoxyCompactItemize}

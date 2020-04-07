@@ -1,0 +1,120 @@
+\hypertarget{class_raytracer}{}\section{Raytracer Class Reference}
+\label{class_raytracer}\index{Raytracer@{Raytracer}}
+
+
+Helper class to compute the result of the ray tracing.  
+
+
+
+
+{\ttfamily \#include $<$raytracer.\+hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_raytracer_a30fd92942bd218de87cdb07548c5b944}{render} (const \hyperlink{class_scene}{Scene} \&scene, const \hyperlink{class_camera}{Camera} \&camera, \hyperlink{class_p_n_g_renderer}{P\+N\+G\+Renderer} \&renderer, int depth)
+\item 
+static void \hyperlink{class_raytracer_a729eca5499f37ea67668a498434f1870}{render\+Normals} (const \hyperlink{class_scene}{Scene} \&scene, const \hyperlink{class_camera}{Camera} \&camera, \hyperlink{class_p_n_g_renderer}{P\+N\+G\+Renderer} \&renderer)
+\item 
+static void \hyperlink{class_raytracer_a9416ba8c371cb540365577dfee90668c}{render\+Without\+Reflection} (const \hyperlink{class_scene}{Scene} \&scene, const \hyperlink{class_camera}{Camera} \&camera, \hyperlink{class_p_n_g_renderer}{P\+N\+G\+Renderer} \&renderer)
+\item 
+static void \hyperlink{class_raytracer_a737a97b9111683be14489a38bf294ccf}{render\+With\+One\+Reflection} (const \hyperlink{class_scene}{Scene} \&scene, const \hyperlink{class_camera}{Camera} \&camera, \hyperlink{class_p_n_g_renderer}{P\+N\+G\+Renderer} \&renderer)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class to compute the result of the ray tracing. 
+
+\subsection{Member Function Documentation}
+\index{Raytracer@{Raytracer}!render@{render}}
+\index{render@{render}!Raytracer@{Raytracer}}
+\subsubsection[{\texorpdfstring{render(const Scene \&scene, const Camera \&camera, P\+N\+G\+Renderer \&renderer, int depth)}{render(const Scene &scene, const Camera &camera, PNGRenderer &renderer, int depth)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Raytracer\+::render (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene} \&}]{scene, }
+\item[{const {\bf Camera} \&}]{camera, }
+\item[{{\bf P\+N\+G\+Renderer} \&}]{renderer, }
+\item[{int}]{depth}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_raytracer_a30fd92942bd218de87cdb07548c5b944}{}\label{class_raytracer_a30fd92942bd218de87cdb07548c5b944}
+Render a scene with a ray tracing algorithm 
+\begin{DoxyParams}{Parameters}
+{\em scene} & \+: \hyperlink{class_scene}{Scene} to render \\
+\hline
+{\em camera} & \+: \hyperlink{class_camera}{Camera} used to film the scene \\
+\hline
+{\em renderer} & \+: Renderer used to register the result \\
+\hline
+{\em depth} & \+: Maximum number of ray reflections \\
+\hline
+\end{DoxyParams}
+\index{Raytracer@{Raytracer}!render\+Normals@{render\+Normals}}
+\index{render\+Normals@{render\+Normals}!Raytracer@{Raytracer}}
+\subsubsection[{\texorpdfstring{render\+Normals(const Scene \&scene, const Camera \&camera, P\+N\+G\+Renderer \&renderer)}{renderNormals(const Scene &scene, const Camera &camera, PNGRenderer &renderer)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Raytracer\+::render\+Normals (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene} \&}]{scene, }
+\item[{const {\bf Camera} \&}]{camera, }
+\item[{{\bf P\+N\+G\+Renderer} \&}]{renderer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_raytracer_a729eca5499f37ea67668a498434f1870}{}\label{class_raytracer_a729eca5499f37ea67668a498434f1870}
+Render a scene with a ray tracing by displaying only the normals
+
+This function have been implemented for debugging purpose.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \+: \hyperlink{class_scene}{Scene} to render \\
+\hline
+{\em camera} & \+: \hyperlink{class_camera}{Camera} used to film the scene \\
+\hline
+{\em renderer} & \+: Renderer used to register the result \\
+\hline
+\end{DoxyParams}
+\index{Raytracer@{Raytracer}!render\+With\+One\+Reflection@{render\+With\+One\+Reflection}}
+\index{render\+With\+One\+Reflection@{render\+With\+One\+Reflection}!Raytracer@{Raytracer}}
+\subsubsection[{\texorpdfstring{render\+With\+One\+Reflection(const Scene \&scene, const Camera \&camera, P\+N\+G\+Renderer \&renderer)}{renderWithOneReflection(const Scene &scene, const Camera &camera, PNGRenderer &renderer)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Raytracer\+::render\+With\+One\+Reflection (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene} \&}]{scene, }
+\item[{const {\bf Camera} \&}]{camera, }
+\item[{{\bf P\+N\+G\+Renderer} \&}]{renderer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_raytracer_a737a97b9111683be14489a38bf294ccf}{}\label{class_raytracer_a737a97b9111683be14489a38bf294ccf}
+Render a scene with a ray tracing algorithm with at most only one reflection
+
+This function have been implemented for debugging purpose.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \+: \hyperlink{class_scene}{Scene} to render \\
+\hline
+{\em camera} & \+: \hyperlink{class_camera}{Camera} used to film the scene \\
+\hline
+{\em renderer} & \+: Renderer used to register the result \\
+\hline
+\end{DoxyParams}
+\index{Raytracer@{Raytracer}!render\+Without\+Reflection@{render\+Without\+Reflection}}
+\index{render\+Without\+Reflection@{render\+Without\+Reflection}!Raytracer@{Raytracer}}
+\subsubsection[{\texorpdfstring{render\+Without\+Reflection(const Scene \&scene, const Camera \&camera, P\+N\+G\+Renderer \&renderer)}{renderWithoutReflection(const Scene &scene, const Camera &camera, PNGRenderer &renderer)}}]{\setlength{\rightskip}{0pt plus 5cm}static void Raytracer\+::render\+Without\+Reflection (
+\begin{DoxyParamCaption}
+\item[{const {\bf Scene} \&}]{scene, }
+\item[{const {\bf Camera} \&}]{camera, }
+\item[{{\bf P\+N\+G\+Renderer} \&}]{renderer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_raytracer_a9416ba8c371cb540365577dfee90668c}{}\label{class_raytracer_a9416ba8c371cb540365577dfee90668c}
+Render a scene with a ray tracing algorithm without any reflection
+
+This function have been implemented for debugging purpose.
+
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & \+: \hyperlink{class_scene}{Scene} to render \\
+\hline
+{\em camera} & \+: \hyperlink{class_camera}{Camera} used to film the scene \\
+\hline
+{\em renderer} & \+: Renderer used to register the result \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{raytracer_8hpp}{raytracer.\+hpp}\end{DoxyCompactItemize}

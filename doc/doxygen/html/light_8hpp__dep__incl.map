@@ -1,0 +1,5 @@
+<map id="include/light.hpp" name="include/light.hpp">
+<area shape="rect" id="node2" href="$scene_8hpp.html" title="Representation of scene. " alt="" coords="116,80,243,107"/>
+<area shape="rect" id="node3" href="$json__parser_8hpp.html" title="Methods to parse JSON files. " alt="" coords="5,155,164,181"/>
+<area shape="rect" id="node4" href="$raytracer_8hpp.html" title="Methods to compute the raytracing. " alt="" coords="201,155,344,181"/>
+</map>

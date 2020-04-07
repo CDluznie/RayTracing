@@ -1,0 +1,5 @@
+<map id="include/camera.hpp" name="include/camera.hpp">
+<area shape="rect" id="node2" href="$json__parser_8hpp.html" title="Methods to parse JSON files. " alt="" coords="5,80,164,107"/>
+<area shape="rect" id="node3" href="$png__renderer_8hpp.html" title="Methods to render the result. " alt="" coords="188,80,355,107"/>
+<area shape="rect" id="node4" href="$raytracer_8hpp.html" title="Methods to compute the raytracing. " alt="" coords="260,155,403,181"/>
+</map>

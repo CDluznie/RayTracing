@@ -1,0 +1,8 @@
+<map id="include/shape.hpp" name="include/shape.hpp">
+<area shape="rect" id="node2" href="$box_8hpp.html" title="Representation of box. " alt="" coords="22,155,135,181"/>
+<area shape="rect" id="node3" href="$json__parser_8hpp.html" title="Methods to parse JSON files. " alt="" coords="10,229,168,256"/>
+<area shape="rect" id="node4" href="$collision__point_8hpp_source.html" title="include/collision_point.hpp" alt="" coords="312,80,487,107"/>
+<area shape="rect" id="node5" href="$scene_8hpp.html" title="Representation of scene. " alt="" coords="211,155,338,181"/>
+<area shape="rect" id="node7" href="$sphere_8hpp.html" title="Representation of sphere. " alt="" coords="106,80,237,107"/>
+<area shape="rect" id="node6" href="$raytracer_8hpp.html" title="Methods to compute the raytracing. " alt="" coords="203,229,346,256"/>
+</map>

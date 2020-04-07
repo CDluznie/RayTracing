@@ -1,0 +1,91 @@
+\hypertarget{class_p_n_g_renderer}{}\section{P\+N\+G\+Renderer Class Reference}
+\label{class_p_n_g_renderer}\index{P\+N\+G\+Renderer@{P\+N\+G\+Renderer}}
+
+
+Helper class to save the result as a {\itshape }.png file.  
+
+
+
+
+{\ttfamily \#include $<$png\+\_\+renderer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_p_n_g_renderer_a6fced206ff06a257b0968721fe6874d5}{$\sim$\+P\+N\+G\+Renderer} ()
+\item 
+void \hyperlink{class_p_n_g_renderer_a764cd27eb8412d1746d94b5a4decc6da}{set\+Pixel} (int x, int y, const glm\+::dvec4 \&color)
+\item 
+void \hyperlink{class_p_n_g_renderer_acee8c4150a67f128719bf830c853335d}{save} (const std\+::string \&fname)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_p_n_g_renderer}{P\+N\+G\+Renderer} \hyperlink{class_p_n_g_renderer_acfc2e3bfdf62063f0a9f0fb22b76fe15}{create} (const \hyperlink{class_camera}{Camera} \&camera)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class to save the result as a {\itshape }.png file. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{P\+N\+G\+Renderer@{P\+N\+G\+Renderer}!````~P\+N\+G\+Renderer@{$\sim$\+P\+N\+G\+Renderer}}
+\index{````~P\+N\+G\+Renderer@{$\sim$\+P\+N\+G\+Renderer}!P\+N\+G\+Renderer@{P\+N\+G\+Renderer}}
+\subsubsection[{\texorpdfstring{$\sim$\+P\+N\+G\+Renderer()}{~PNGRenderer()}}]{\setlength{\rightskip}{0pt plus 5cm}P\+N\+G\+Renderer\+::$\sim$\+P\+N\+G\+Renderer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_n_g_renderer_a6fced206ff06a257b0968721fe6874d5}{}\label{class_p_n_g_renderer_a6fced206ff06a257b0968721fe6874d5}
+Destruct the P\+NG renderer 
+
+\subsection{Member Function Documentation}
+\index{P\+N\+G\+Renderer@{P\+N\+G\+Renderer}!create@{create}}
+\index{create@{create}!P\+N\+G\+Renderer@{P\+N\+G\+Renderer}}
+\subsubsection[{\texorpdfstring{create(const Camera \&camera)}{create(const Camera &camera)}}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf P\+N\+G\+Renderer} P\+N\+G\+Renderer\+::create (
+\begin{DoxyParamCaption}
+\item[{const {\bf Camera} \&}]{camera}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_p_n_g_renderer_acfc2e3bfdf62063f0a9f0fb22b76fe15}{}\label{class_p_n_g_renderer_acfc2e3bfdf62063f0a9f0fb22b76fe15}
+Create a P\+NG renderer 
+\begin{DoxyParams}{Parameters}
+{\em camera} & \+: \hyperlink{class_camera}{Camera} used to render the scene \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the corresponding P\+NG renderer 
+\end{DoxyReturn}
+\index{P\+N\+G\+Renderer@{P\+N\+G\+Renderer}!save@{save}}
+\index{save@{save}!P\+N\+G\+Renderer@{P\+N\+G\+Renderer}}
+\subsubsection[{\texorpdfstring{save(const std\+::string \&fname)}{save(const std::string &fname)}}]{\setlength{\rightskip}{0pt plus 5cm}void P\+N\+G\+Renderer\+::save (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{fname}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_n_g_renderer_acee8c4150a67f128719bf830c853335d}{}\label{class_p_n_g_renderer_acee8c4150a67f128719bf830c853335d}
+Save the rendering in a P\+NG file 
+\begin{DoxyParams}{Parameters}
+{\em fname} & \+: Name of the output file \\
+\hline
+\end{DoxyParams}
+\index{P\+N\+G\+Renderer@{P\+N\+G\+Renderer}!set\+Pixel@{set\+Pixel}}
+\index{set\+Pixel@{set\+Pixel}!P\+N\+G\+Renderer@{P\+N\+G\+Renderer}}
+\subsubsection[{\texorpdfstring{set\+Pixel(int x, int y, const glm\+::dvec4 \&color)}{setPixel(int x, int y, const glm::dvec4 &color)}}]{\setlength{\rightskip}{0pt plus 5cm}void P\+N\+G\+Renderer\+::set\+Pixel (
+\begin{DoxyParamCaption}
+\item[{int}]{x, }
+\item[{int}]{y, }
+\item[{const glm\+::dvec4 \&}]{color}
+\end{DoxyParamCaption}
+)}\hypertarget{class_p_n_g_renderer_a764cd27eb8412d1746d94b5a4decc6da}{}\label{class_p_n_g_renderer_a764cd27eb8412d1746d94b5a4decc6da}
+Get the position of a pixel in the space 
+\begin{DoxyParams}{Parameters}
+{\em px} & \+: Coordinate value on the {\itshape x} axis of the pixel \\
+\hline
+{\em py} & \+: Coordinate value on the {\itshape y} axis of the pixel \\
+\hline
+{\em color} & \+: Color to set \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\hyperlink{png__renderer_8hpp}{png\+\_\+renderer.\+hpp}\end{DoxyCompactItemize}
