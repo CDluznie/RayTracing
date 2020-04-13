@@ -31,7 +31,7 @@ void PNGRenderer::setPixel(int x, int y, const glm::dvec4 &color) {
 void PNGRenderer::save(const std::string &fname) {
 	FILE* file = fopen(fname.c_str(), "wb");
 	if (file == nullptr) {
-		throw std::runtime_error("Error PNGRenderer::save: can not creat file '" + fname + "'");
+		throw std::runtime_error("Error PNGRenderer::save: can not create file '" + fname + "'");
 	}
 	svpng(file, _width, _height, _image, 1);
 	fclose(file);
