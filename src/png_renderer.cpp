@@ -1,7 +1,6 @@
 #include "png_renderer.hpp"
-#include <lodepng.h>
+#include <svpng/svpng.h>
 #include <iomanip> 
-
 
 PNGRenderer::PNGRenderer(unsigned char *image, int width, int height) :
 _image(image),
@@ -30,8 +29,10 @@ void PNGRenderer::setPixel(int x, int y, const glm::dvec4 &color) {
 }
 
 void PNGRenderer::save(const std::string &fname) {
-	unsigned error = lodepng::encode(fname, _image, _width, _height, LCT_RGBA);
-	if (error) {
-		throw std::runtime_error("Error loadpng::decode: " + std::string(lodepng_error_text(error)));
+	FILE* file = fopen(fname.c_str(), "wb");
+	if (file == nullptr) {
+		throw std::runtime_error("Error PNGRenderer::save: can not creat file '" + fname + "'");
 	}
+	svpng(file, _width, _height, _image, 1);
+	fclose(file);
 }

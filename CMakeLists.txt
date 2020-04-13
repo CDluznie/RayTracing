@@ -8,8 +8,6 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -std=c++17")
 
 include_directories(include/)
 
-#add_subdirectory(lib/)
-
 file(GLOB_RECURSE SOURCE_FILES src/*)
 file(GLOB HEADER_FILES *.hpp)
 
