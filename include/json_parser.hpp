@@ -16,6 +16,7 @@
 #include "box.hpp"
 #include "light.hpp"
 #include <json/json.hpp>
+using json = nlohmann::json;
 #include <string>
 #include <utility>
 #include <glm/glm.hpp>
